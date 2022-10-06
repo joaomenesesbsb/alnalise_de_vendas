@@ -22,7 +22,7 @@ public class Program {
 		List<Sale> list = new ArrayList<>();
 		
 		System.out.print("Entre o caminho do arquivo: ");
-		String path = "c:\\temp\\in.csv";
+		String path = sc.nextLine();
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(path))){
 			
@@ -76,12 +76,14 @@ public class Program {
 			
 			double totalSold = firstSold + secondSold;
 			
-			System.out.println("Valor total vendido pelo vendedor Logan nos meses 1 e 7 = " + String.format("%.2f", totalSold));
+			System.out.println("Valor total vendido pelo vendedor " + sellerIn + " nos meses " + firstMonth + " e " + secondMonth + " = " + String.format("%.2f", totalSold));
 					
 		}catch(IOException e) {
 			System.out.println("Error: " + e.getMessage());
 			
 		}
+		
+		sc.close();
 	}
 
 }
